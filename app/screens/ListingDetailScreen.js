@@ -2,7 +2,7 @@ import React from "react";
 import { Image, View, StyleSheet } from "react-native";
 import AppText from "../components/AppText";
 import Colors from "../config/colors";
-import ListItem from "../components/ListItem"
+import ListItem from "../components/ListItem";
 
 function ListingDetailScreen(props) {
   return (
@@ -11,11 +11,13 @@ function ListingDetailScreen(props) {
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>Red Jacked for sale</AppText>
         <AppText style={styles.price}>$100</AppText>
-        <ListItem
-        image={require("../assets/Palestine.png")}
-        title= "Palestine"
-        subTitle="Free Palestine"
-        />
+        <View style={styles.userContainer}>
+          <ListItem
+            image={require("../assets/mosh.jpg")}
+            title="Mosh hamedani"
+            subTitle="5 listings"
+          />
+        </View>
       </View>
     </View>
   );
@@ -38,6 +40,9 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 20,
     marginVertical: 10,
+  },
+  userContainer: {
+    marginVertical: 40,
   },
 });
 export default ListingDetailScreen;
